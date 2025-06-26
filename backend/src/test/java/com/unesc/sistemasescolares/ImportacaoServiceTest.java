@@ -55,7 +55,6 @@ public class ImportacaoServiceTest {
     @Test
     @Transactional
     public void testImportacaoArquivo() throws IOException {
-        // 1. Criar um arquivo de teste simulado
         String conteudoArquivo = "0CURSO DE CIENCIA DA COMPUTACAO        2025060701-Fase08-Fase0000001001\n" +
                                  "101-Fase0503\n" +
                                  "2108500202\n" +
@@ -63,28 +62,22 @@ public class ImportacaoServiceTest {
                                  "3Professor Teste Dois                      02\n" +
                                  "900000000005";
 
-        // Garantir que o diretório existe
         Files.createDirectories(Paths.get("src/test/resources"));
-        
-        // Escrever o conteúdo no arquivo
+
         Files.write(Paths.get(ARQUIVO_IMPORTACAO_PATH), conteudoArquivo.getBytes());
 
-        // Criar o arquivo de teste
         File arquivo = new File(ARQUIVO_IMPORTACAO_PATH);
         FileInputStream input = new FileInputStream(arquivo);
         MockMultipartFile multipartFile = new MockMultipartFile("file", "importacao.txt", "text/plain", input);
 
-        // 2. Chamar o serviço de importação
         Curso curso = importacaoService.processarArquivoImportacao(multipartFile);
 
-        // 3. Verificar os dados no banco de dados
         assertNotNull(curso);
         assertEquals(1, cursoRepository.count());
         assertEquals(1, faseRepository.count());
         assertEquals(1, disciplinaRepository.count());
         assertEquals(2, professorRepository.count());
 
-        // Verificar detalhes do curso
         assertEquals("CURSO DE CIENCIA DA COMPUTACAO", curso.getNomeCurso().trim());
         assertEquals("01-Fase", curso.getPeriodoInicial());
         assertEquals("08-Fase", curso.getPeriodoFinal());
@@ -92,13 +85,11 @@ public class ImportacaoServiceTest {
         assertEquals("001", curso.getVersaoLayout());
         assertNotNull(curso.getHashArquivo());
 
-        // Verificar fase
         assertEquals(1, curso.getFases().size());
         assertEquals("01-Fase", curso.getFases().get(0).getNomeFase());
         assertEquals(5, curso.getFases().get(0).getQtdDisciplinas());
         assertEquals(3, curso.getFases().get(0).getQtdProfessores());
 
-        // Verificar disciplina
         assertEquals(1, curso.getFases().get(0).getDisciplinas().size());
         assertEquals("10850", curso.getFases().get(0).getDisciplinas().get(0).getCodigoDisciplina());
         assertEquals("Algoritmos e Programação", curso.getFases().get(0).getDisciplinas().get(0).getNomeDisciplina());
@@ -106,10 +97,8 @@ public class ImportacaoServiceTest {
         assertEquals("Segunda-Feira", curso.getFases().get(0).getDisciplinas().get(0).getNomeDiaSemana());
         assertEquals(2, curso.getFases().get(0).getDisciplinas().get(0).getQtdProfessores());
 
-        // Verificar professores
         assertEquals(2, curso.getFases().get(0).getDisciplinas().get(0).getProfessores().size());
         
-        // Imprimir os dados inseridos no banco de dados
         System.out.println("=== DADOS INSERIDOS NO BANCO DE DADOS ===");
         System.out.println("CURSO: " + curso);
         curso.getFases().forEach(fase -> {
@@ -122,7 +111,6 @@ public class ImportacaoServiceTest {
             });
         });
 
-        // Testar importação duplicada
         Exception exception = assertThrows(RuntimeException.class, () -> {
             importacaoService.processarArquivoImportacao(multipartFile);
         });
