@@ -111,7 +111,7 @@ const ImportacaoPage = () => {
       const formData = new FormData();
       formData.append('arquivo', arquivo);
 
-      const response = await api.post('/api/importacao/upload', formData, {
+      const response = await api.post('/importacao/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
