@@ -4,33 +4,43 @@ Trabalho de faculdade da matéria de Programação Orientada a Objeto, do profes
 
 Aluno Guilherme Conti Machado
 
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 ## Estrutura do Projeto
 
 O projeto está dividido em duas partes principais:
 
-- **Backend**: Desenvolvido em Java com Spring Boot (com visualização em swagger), fornece uma API RESTful para operações CRUD e processamento de arquivos.
+- **Backend**: Desenvolvido em Java com Spring Boot, fornece uma API RESTful para operações CRUD e processamento de arquivos.
 - **Frontend**: Desenvolvido em React, fornece a interface de usuário para interação com o sistema.
 
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 ## Ferramentas
 
 - Java
-- Node.js
+- Spring Boot
+- Spring Data JPA
+- Jackson
+- Maven
 - Docker e Docker Compose
 - PostgreSQL (via Docker)
 
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+- React.js
+- Bootstrap
+- Axios
+- React Router
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 ## Configuração e Execução
 
-- **Compilação do projeto (backend)**: Na pasta backend rode> **mvn clean package -DskipTests**
-- **Rodar o docker**: Na raiz do programa rode> **docker-compose build** e depois **docker-compose up -d** ou **docker-compose up --build**
+- **Compilação do projeto (backend)**: Na pasta backend rode> **mvn clean package** ou **mvn clean package -DskipTests**
+
+- **Rodar o docker**: Na raiz do programa rode> **docker-compose --build** e depois **docker-compose up -d** ou **docker-compose up --build**
+
 - **Rodar o frontend**: Na pasta frontend rode> **npm start**
 
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 ## Importação de Arquivo
 
@@ -61,7 +71,7 @@ Exemplo de arquivo:
 900000000012
 ```
 
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 ## Funcionalidades
 

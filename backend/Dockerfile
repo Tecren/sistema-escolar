@@ -1,4 +1,4 @@
-# Etapa de build
+
 FROM maven:3.9.4-eclipse-temurin-17 AS build
 
 WORKDIR /app
@@ -6,9 +6,8 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-RUN mvn clean package -DskipTests
+RUN mvn clean package
 
-# Etapa de execução
 FROM openjdk:17-jdk-slim
 
 WORKDIR /app
