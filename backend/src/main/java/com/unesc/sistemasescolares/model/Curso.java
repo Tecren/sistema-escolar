@@ -148,11 +148,5 @@ public class Curso {
         this.fases = fases;
     }
 
-    @Override
-    public String toString() {
-        return "Curso [id=" + id + ", nomeCurso=" + nomeCurso + ", dataProcessamento=" + dataProcessamento
-                + ", periodoInicial=" + periodoInicial + ", periodoFinal=" + periodoFinal + ", sequencia=" + sequencia
-                + ", versaoLayout=" + versaoLayout + "]";
-    }
 }
 

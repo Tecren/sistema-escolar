@@ -85,10 +85,5 @@ public class Professor {
         this.nomeTituloDocente = nomeTituloDocente;
     }
 
-    @Override
-    public String toString() {
-        return "Professor [id=" + id + ", nomeProfessor=" + nomeProfessor + ", tituloDocente=" + tituloDocente
-                + ", nomeTituloDocente=" + nomeTituloDocente + "]";
-    }
 }
 

@@ -141,11 +141,5 @@ public class Disciplina {
         this.professores = professores;
     }
 
-    @Override
-    public String toString() {
-        return "Disciplina [id=" + id + ", codigoDisciplina=" + codigoDisciplina + ", nomeDisciplina=" + nomeDisciplina
-                + ", diaSemana=" + diaSemana + ", nomeDiaSemana=" + nomeDiaSemana + ", qtdProfessores=" + qtdProfessores
-                + "]";
-    }
 }
 

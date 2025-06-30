@@ -116,10 +116,5 @@ public class Fase {
         this.disciplinas = disciplinas;
     }
 
-    @Override
-    public String toString() {
-        return "Fase [id=" + id + ", nomeFase=" + nomeFase + ", qtdDisciplinas=" + qtdDisciplinas + ", qtdProfessores="
-                + qtdProfessores + "]";
-    }
 }
 
